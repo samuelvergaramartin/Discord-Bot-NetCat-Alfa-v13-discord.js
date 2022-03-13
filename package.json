@@ -10,7 +10,9 @@
   "author": "Sam170703#6466",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.4.0",
     "discord.js": "^13.6.0",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "fs": "^0.0.1-security"
   }
 }
