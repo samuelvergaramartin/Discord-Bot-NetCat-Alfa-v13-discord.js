@@ -1,5 +1,5 @@
 var colors = require('colors');
-var ncomando = "testhandler";
+var ncomando = "test";
 module.exports = {
     name: `${ncomando}`,
     run: async (client, message, args) => {
