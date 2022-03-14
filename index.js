@@ -3,6 +3,7 @@ const discord = require("discord.js");
 const fs = require('fs');
 const botprefix = require('./defaultprefix.json');
 var prefix = botprefix.prefix;
+const db = require("megadb")
 const client = new discord.Client({
     intents: 98303
 });
