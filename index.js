@@ -34,7 +34,7 @@ client.on("messageCreate", async message => {
      if(!message.content.startsWith(prefix)) return;
  let cmd = client.comandos.get(command)
     if(cmd) {
-        return cmd.run(client, message, args)
+        return cmd.run(client, message, args, discord)
     }
 })
 
