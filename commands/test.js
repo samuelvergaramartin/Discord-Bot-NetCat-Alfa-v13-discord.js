@@ -2,7 +2,7 @@ var colors = require('colors');
 var ncomando = "test";
 const db = require('megadb`)
 const estado = new db.crearDB('estadopersonalizado')
-var numerocero = 0;
+var estadooff = 2;
 module.exports = {
     name: `${ncomando}`,
     run: async (client, message, args, discord) => {
@@ -12,7 +12,7 @@ module.exports = {
         let estadopersonalizado = `${x.presence.status}`;
         const suestado = await estado.obtener(`${x.id}`)
         if(!suestado) {
-            estado.set(`${x.id}`, numerocero)
+            estado.set(`${x.id}`, estadooff)
             if(estadopersonalizado == `offline`) return;
             if(!estadopersonalizado == `offline`) {
                 if(suestado == `{numerocero}`) return;
