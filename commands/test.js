@@ -1,4 +1,6 @@
 var colors = require('colors');
+const { existsSync } = require('fs');
+const { waitForDebugger } = require('inspector');
 var ncomando = "test";
 const db = require('megadb')
 const estado = new db.crearDB('estadopersonalizado')
@@ -8,17 +10,80 @@ const cambiarestado = 2;
 module.exports = {
     name: `${ncomando}`,
     run: async (client, message, args, discord) => {
+        message.channel.send("Se ha activado la vigilancia de estado.");
         //message.channel.send("Todo en orden.");
         let sv = client.guilds.cache.get("900856291461824562")
         let x = sv.members.cache.get("911352430963347537")
         let estadopersonalizado = `${x.presence.status}`;
-        const suestado = await estado.obtener(`${x.id}`)
-        setInterval(() => {
+        let suestado = await estado.obtener(`${x.id}`)
+        let infierno = 2;
+        if(estadopersonalizado == `offline`) {
+            
+            message.channel.send("Claro perro!!! @everyone! vamos ya q estoy KO")
+        }
+       /* let y = 1
+        while(y === 1){
+            message.channel.send("Error: while(true) nunca terminará el bucle!")
+            let estadopersonalizado = `${x.presence.status}`;
+              while(estadopersonalizado == `offline`) {
+                  let i = 2;
+                  while(estadopersonalizado == `offline`){
+                      while(i === 2){
+                          message.channel.send("Si no repito este mensaje más de una vez entonces eso significa que el i++ ha funcionado.");
+                          i++;
+                          break;
+                      }
+                  }
+              }
+        }*/
+       // setInterval(() => {
+          /*  while(true){
+                let valor = 2
+                while(true) {
+                    let valor2 = `${valor}`;
+                    let estadopersonalizado = `${x.presence.status}`;
+            while(estadopersonalizado == `offline`) {
+                if(valor === 4) {
+                   let valor2 = 2;
+                    message.channel.send(`${x} está actualmente **OFFLINE**`);
+                }else{
+                    return;
+                }
+                
+                break;
+                }
+                while(!estadopersonalizado == `offline`) {
+                    if(valor === 2) {
+                       let valor = 4;
+                        message.channel.send(`${x} está actualmente **ONLINE**`);
+                    }else{
+                        return;
+                    }
+                    
+                    break;
+                    }
+            }
+            }*/
+               // const suestado = estado.obtener(`${x.id}`)
+               /*let suestado2 = `${suestado}`;
+               let estadopersonalizado = `${x.presence.status}`;
+                message.channel.send(`${estadopersonalizado}`)
+                message.channel.send(`${suestado2}`)
+                estado.sumar(`${x.id}`, 2)*/
+                
+                
+                //message.channel.send(`${estado}`)
+               // message.channel.send(`${suestado}`)
+               
+       // }, 3000)
+       // message.channel.send("Hey! Me salí del setInterval()")
+        /*setInterval(() => {
              if(!suestado) {
             
             if(estadopersonalizado == `offline`) {
                 estado.set(`${x.id}`, estadooff)
                 message.channel.send(`${x} está actualmente **OFFLINE**`);
+               // message.channel.send("Lectura, hasta aquí se lee el código")
             }
             if(!estadopersonalizado == `offline`) {
                 estado.set(`${x.id}`, estadoon)
@@ -36,12 +101,15 @@ module.exports = {
                     if(suestado == `${estadoon}`) {
                         estado.restar(`${x.id}`, cambiarestado)
                         message.channel.send(`${x} está actualmente **OFFLINE**`);
+                        message.channel.send(`${estadopersonalizado}`)
+                        message.channel.send(`${suestado}`)
+                        message.channel.send(`${estado}`)
                     }
                 }
             }
         }, 5000)
        
-        
+        */
         
        /* message.channel.send(`Leyendo el valor de la variable declarada 'x': ${x}`)
         message.channel.send(`Leyendo el valor de $x.presence: ${x.presence.status}`)*/
@@ -49,6 +117,7 @@ module.exports = {
         /*setInterval(() => {
             
         }, 5000)*/
+
     }
 }
 console.log(`Comando: ${ncomando}: OK`.green)
