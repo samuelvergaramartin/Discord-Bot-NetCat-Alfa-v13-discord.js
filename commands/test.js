@@ -10,16 +10,18 @@ const cambiarestado = 2;
 module.exports = {
     name: `${ncomando}`,
     run: async (client, message, args, discord) => {
+        const wait = require("util").promisify(setTimeout)
+        await wait(5000)
         message.channel.send("Se ha activado la vigilancia de estado.");
         //message.channel.send("Todo en orden.");
         let sv = client.guilds.cache.get("900856291461824562")
         let x = sv.members.cache.get("911352430963347537")
         let estadopersonalizado = `${x.presence.status}`;
         let suestado = await estado.obtener(`${x.id}`)
-        let infierno = 2;
-        if(estadopersonalizado == `offline`) {
+        
+       /* if(estadopersonalizado == `offline`) {
             
-            message.channel.send("Claro perro!!! @everyone! vamos ya q estoy KO")
+            
         }
        /* let y = 1
         while(y === 1){

@@ -15,6 +15,7 @@
     "dotenv": "^16.0.0",
     "fs": "^0.0.1-security",
     "inspector": "^0.5.0",
-    "megadb": "^3.4.0"
+    "megadb": "^3.4.0",
+    "util": "^0.12.4"
   }
 }
