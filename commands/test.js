@@ -11,13 +11,53 @@ module.exports = {
     name: `${ncomando}`,
     run: async (client, message, args, discord) => {
         const wait = require("util").promisify(setTimeout)
-        await wait(5000)
-        message.channel.send("Se ha activado la vigilancia de estado.");
+       // await wait(5000)
+        
         //message.channel.send("Todo en orden.");
         let sv = client.guilds.cache.get("900856291461824562")
         let x = sv.members.cache.get("911352430963347537")
         let estadopersonalizado = `${x.presence.status}`;
         let suestado = await estado.obtener(`${x.id}`)
+        if(suestado === 2) {
+            estado.sumar(`${x.id}`, cambiarestado);
+            message.channel.send("Se ha activado la vigilancia de estado.");
+            while(estadopersonalizado == `dnd`) {
+                message.channel.send("Nivel 1")
+                while(estadopersonalizado == `dnd`) {
+                    message.channel.send("Nivel 2")
+                    while(estadopersonalizado == `dnd`) {
+                    message.channel.send("**:x: | ERROR:** `return;` is not detected!")
+                    await wait(3000)
+                    if(estadopersonalizado !== `dnd`) {
+                        return;
+                    }
+                    await wait(2000)
+                    }
+                    /*message.channel.send(`Lectura de la variable $suestado : ${suestado}`)
+                    if(suestado === 2) {
+                        break;
+                    }else{
+                    message.channel.send("Lectura...")
+                    await wait(2000)
+                    }*/
+                }
+            }
+            message.channel.send("CHANGE DETECTED: BUCLE DETENIDO")
+        }
+        message.channel.send("**:x: | ERROR:** UNESPECTED EXIT 0")
+        if(suestado === 4) {
+            estado.restar(`${x.id}`, cambiarestado);
+            message.channel.send("Se ha desactivado la vigilancia de estado.");
+        }
+       /* message.channel.send("Probando, probando, esperando 5 segundos...")
+        await wait(5000)
+        message.channel.send("Pasaron 5 segundos, esperando 2 segundos más...")
+        await wait(2000)
+        message.channel.send("Fin de la prueba del await wait, proceda a evaluar resultado.")
+        /*message.channel.send("Probando, probando, esperando 5 segundos para el próximo mensaje...").setTimeout(() => {
+            message.channel.send("Han pasado 5 segundos? De no ser así... ERROR!")
+            setTimeout(5000)
+        }, 5000)*/
         
        /* if(estadopersonalizado == `offline`) {
             
