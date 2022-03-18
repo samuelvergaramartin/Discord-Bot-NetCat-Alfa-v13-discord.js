@@ -10,10 +10,14 @@ const cambiarestado = 2;
 module.exports = {
     name: `${ncomando}`,
     run: async (client, message, args, discord) => {
-        const wait = require("util").promisify(setTimeout)
-       // await wait(5000)
+       /* let sv = client.guilds.cache.get("900856291461824562")
+        let invitación = message.guild.invites.fetch(sv);
+        message.channel.send(`${invitación}`);
+
+      /*  const wait = require("util").promisify(setTimeout)
+       // await wait(5000)*/
         
-        //message.channel.send("Todo en orden.");
+        message.channel.send("Todo en orden.");/*
         let sv = client.guilds.cache.get("900856291461824562")
         let x = sv.members.cache.get("911352430963347537")
         let estadopersonalizado = `${x.presence.status}`;
@@ -39,7 +43,7 @@ module.exports = {
                     }else{
                     message.channel.send("Lectura...")
                     await wait(2000)
-                    }*/
+                    }*//*
                 }
             }
             message.channel.send("CHANGE DETECTED: BUCLE DETENIDO")
@@ -48,7 +52,7 @@ module.exports = {
         if(suestado === 4) {
             estado.restar(`${x.id}`, cambiarestado);
             message.channel.send("Se ha desactivado la vigilancia de estado.");
-        }
+        }*/
        /* message.channel.send("Probando, probando, esperando 5 segundos...")
         await wait(5000)
         message.channel.send("Pasaron 5 segundos, esperando 2 segundos más...")
