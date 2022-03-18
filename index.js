@@ -25,7 +25,7 @@ client.once("ready", (bot) => {
 client.on("messageCreate", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
-    if(!message.channel.permissionsFor(client.user).has('SEND_MESSAGES')) return message.author.send("Error, no tengo permisos suficientes.").catch(()=>{ return;});
+    
 
     const args = message.content.slice(prefix.length).trim().split(" ");
     const command = args.shift().toLowerCase();
@@ -33,6 +33,8 @@ client.on("messageCreate", async message => {
     
      
      if(!message.content.startsWith(prefix)) return;
+     if(!message.channel.permissionsFor(client.user).has('SEND_MESSAGES')) return message.author.send("Error, no tengo permisos suficientes.").catch(()=>{ return;});
+     if(message.author.id !== "911352430963347537") return message.channel.send("**:x: | PERMISSION_DENIED :** No tienes permiso para los usar comandos de este bot.\nPersonal autorizado: Sam170703#6466")
  let cmd = client.comandos.get(command)
     if(cmd) {
         return cmd.run(client, message, args, discord)
