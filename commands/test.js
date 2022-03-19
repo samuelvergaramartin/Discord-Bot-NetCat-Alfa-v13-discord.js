@@ -13,11 +13,13 @@ module.exports = {
        /* let sv = client.guilds.cache.get("900856291461824562")
         let invitación = message.guild.invites.fetch(sv);
         message.channel.send(`${invitación}`);
-
-      /*  const wait = require("util").promisify(setTimeout)
+*/
+        const wait = require("util").promisify(setTimeout)
        // await wait(5000)*/
         
-        message.channel.send("Todo en orden.");/*
+        message.channel.send("Apagando bot...");
+        await wait(1000)
+        client.destroy()/*
         let sv = client.guilds.cache.get("900856291461824562")
         let x = sv.members.cache.get("911352430963347537")
         let estadopersonalizado = `${x.presence.status}`;
