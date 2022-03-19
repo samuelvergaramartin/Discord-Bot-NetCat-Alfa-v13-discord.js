@@ -18,9 +18,45 @@ for(var archi of archivos) {
 }
 
 client.once("ready", (bot) => {
-    client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: "idle"});
+    let estadoausente = "idle";
+    client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: `${estadoausente}`});
     console.log(`Bot: ${bot.user.username}\nStatus: ${bot.presence.status}`);
 })
+
+client.once("ready", (bot) => {
+    console.log(`Bot: ${bot.user.username}\nStatus: ${bot.presence.status}`);
+    //const wait = require("util").promisify(setTimeout)
+    let estados = {
+        estadoidle: "idle",
+        estadodnd: "dnd"
+    };
+    setInterval(() => {
+        for(let ponerestado in estados) {
+            client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: `${estados[ponerestado]}`});
+            
+        }
+    }, 3000);
+    
+    
+})
+    //var encendida = 1;
+    
+    /*setInterval(() => {
+        let estado1 = setInterval(() => client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: "idle"}), 2000);
+        setTimeout(() => { clearInterval(estado1); }, 3000);
+        wait(1000)
+        let estado2 = setInterval(() => client.user.setPresence({activities: [{name: 'Configurando...', type: "PLAYING"}], status: "dnd"}), 2000)
+        setTimeout(() => { clearInterval(estado2); }, 3000);
+    }, 12000)*/
+    
+    /*setInterval(() => {
+        wait(2000)
+        client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: "idle"});
+        wait(2000)
+        client.user.setPresence({activities: [{name: 'Configurando...', type: "PLAYING"}], status: "dnd"});
+        wait(2000)
+    },3000);*/
+
 
 client.on("messageCreate", async message => {
     if(message.author.bot) return;
