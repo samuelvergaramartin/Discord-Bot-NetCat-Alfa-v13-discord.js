@@ -15,12 +15,34 @@ module.exports = {
         message.channel.send(`${invitación}`);
 */
         const wait = require("util").promisify(setTimeout)
+        let objetos = {
+            objeto1: "tic",
+            objeto2: "tac"
+        };
+        while(objetos){
+            message.channel.send(objetos.objeto1);
+            wait(2000)
+            message.channel.send(objetos.objeto2);
+            wait(2000)
+        };
+       /* setInterval(() => {
+            message.channel.send(objetos.objeto1).then(() => {
+                await wait(5000)
+                message.channel.send(objetos.objeto2);
+            })*/
+            
+            /*for(let darobjeto in objetos) {
+                message.channel.send(objetos[darobjeto]);
+                //wait(5000)
+            }*/
+        //}, 10000);
+        
        // await wait(5000)*/
         
-        message.channel.send("Apagando bot...");
-        await wait(1000)
-        client.destroy()/*
-        let sv = client.guilds.cache.get("900856291461824562")
+       // message.channel.send("Todo en orden");
+        //await wait(1000)
+       // client.destroy()/*
+       /* let sv = client.guilds.cache.get("900856291461824562")
         let x = sv.members.cache.get("911352430963347537")
         let estadopersonalizado = `${x.presence.status}`;
         let suestado = await estado.obtener(`${x.id}`)
