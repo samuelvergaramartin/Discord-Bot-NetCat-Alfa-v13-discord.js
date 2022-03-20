@@ -3,7 +3,8 @@ const discord = require("discord.js");
 const fs = require('fs');
 const botprefix = require('./defaultprefix.json');
 var prefix = botprefix.prefix;
-const db = require('megadb')
+const db = require('megadb');
+const { waitForDebugger } = require("inspector");
 const client = new discord.Client({
     intents: 98303
 });
@@ -23,22 +24,47 @@ client.once("ready", (bot) => {
     console.log(`Bot: ${bot.user.username}\nStatus: ${bot.presence.status}`);
 })
 
-client.once("ready", (bot) => {
+/*client.once("ready", (bot) => {
     console.log(`Bot: ${bot.user.username}\nStatus: ${bot.presence.status}`);
-    //const wait = require("util").promisify(setTimeout)
-    let estados = {
-        estadoidle: "idle",
-        estadodnd: "dnd"
-    };
-    setInterval(() => {
-        for(let ponerestado in estados) {
+    const wait = require("util").promisify(setTimeout)
+    var paco = "paco";
+    while(paco === "paco") {
+        setInterval(() => {
+            client.on("ready", (bot) => {
+                client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: "idle"});
+                wait(3000)
+                client.destroy()
+            })
+            wait(1000)
+            client.on("ready", (bot) => {
+                client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: "dnd"});
+                wait(3000)
+                client.destroy()
+            })
+            wait(1000)
+        }, 8000);
+        
+    }
+})*/
+   /* setInterval(() => {
+        let estados = {
+            estadoidle: "idle",
+            estadodnd: "dnd"
+        };
+        client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: `${estados.estadoidle}`});
+        wait(2000)
+        client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: `${estados.estadodnd}`});
+        /*for(let ponerestado in estados) {
+            wait(2000)
             client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: `${estados[ponerestado]}`});
-            
-        }
-    }, 3000);
+            wait(2000)
+            client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: `${estados[ponerestado]}`});
+        }*/
+        //wait(2000)
+    //}, 2000);*/
     
     
-})
+
     //var encendida = 1;
     
     /*setInterval(() => {
