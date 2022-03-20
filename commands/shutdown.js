@@ -18,7 +18,7 @@ module.exports = {
        // await wait(5000)*/
         
         message.channel.send("Apagando bot...");
-        await wait(1000)
+        //await wait(1000)
         client.destroy()/*
         let sv = client.guilds.cache.get("900856291461824562")
         let x = sv.members.cache.get("911352430963347537")
