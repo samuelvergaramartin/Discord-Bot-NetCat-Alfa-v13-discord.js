@@ -2,6 +2,7 @@ require("dotenv").config();
 const discord = require("discord.js");
 const { create } = require('sourcebin')
 const fs = require('fs');
+const ms = require('ms');
 const botprefix = require('./defaultprefix.json');
 var prefix = botprefix.prefix;
 const db = require('megadb');
