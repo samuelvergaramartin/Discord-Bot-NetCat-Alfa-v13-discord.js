@@ -19,8 +19,8 @@ for(var archi of archivos) {
 }
 
 client.once("ready", (bot) => {
-    let estadoausente = "idle";
-    client.user.setPresence({activities: [{name: 'Bot exclusivo del servidor oficial de NetCat | Disponible muy pronto', type: "PLAYING"}], status: `${estadoausente}`});
+    let estadodnd = "dnd";
+    client.user.setPresence({activities: [{name: '📡Coneccting to NetCat Beta...📡', type: "PLAYING"}], status: `${estadodnd}`});
     console.log(`Bot: ${bot.user.username}\nStatus: ${bot.presence.status}`);
 })
 
