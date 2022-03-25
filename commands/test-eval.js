@@ -9,7 +9,7 @@ module.exports = {
   alias: ["ev"],
   run: async (client, message, args) {
 
-if(![`911352430963347537`, `691775631033368577`].some(a => a.includes(message.author.id)) == false) return message.reply('<:aviso:925769011822727209>| Oh, esto es algo incomodo solo el equipo del bot puede usar esto');
+if(![`911352430963347537`].some(a => a.includes(message.author.id)) == false) return message.reply('<:aviso:925769011822727209>| Oh, esto es algo incomodo solo el equipo del bot puede usar esto');
 	if(!args[0]) return message.channel.send(':aviso:925769011822727209| Pon algo para evaluar >.<');
 
 	//Eval
