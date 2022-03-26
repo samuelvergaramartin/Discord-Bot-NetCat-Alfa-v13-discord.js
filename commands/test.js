@@ -10,12 +10,51 @@ var ncomando = "test";
 module.exports = {
     name: `${ncomando}`,
     run: async (client, message, args, discord) => {
+        var a = "2";
+        message.channel.send(a);
+        var a = "3";
+        message.channel.send(a);
+
+        /*client.on("messageCreate", async message => {
+            let sv = client.guilds.cache.get("900856291461824562")
+            let x = sv.members.cache.get("911352430963347537")
+            let estado = `${x.presence.status}`;
+        })*/
+     /*  let i = 1;
+        while(i === 1) {
+            message.channel.send("X");
+            i++;
+        }
+        while(i !== 1) {
+            message.channel.send(`${i}`);
+            break;
+        }
+        client.once("messageCreate", async message => {
+            if(i !== 1) {
+                message.channel.send("Probando...");
+                if(i !== 1) return;
+            }else{
+                message.channel.send("Misión cumplida");
+            }
+            if(message.channel.content === "stop") return message.channel.send("Intentando parar...");
+        })
+        message.channel.send("Se lee?");*/
+        
+        /*async function deprueba () {
+            message.channel.send("Esperando a que se escriba `xd`...");
+            let respuesta = message.channel.send("Misión cumplida!");
+            let mensaje = message.channel.content === "xd";
+            let esperando = await mensaje.then(() => respuesta);
+            esperando;
+        }
+        deprueba();*/
+      //  const wait = require("util").promisify(setTimeout)
        /* let sv = client.guilds.cache.get("900856291461824562")
         let invitación = message.guild.invites.fetch(sv);
         message.channel.send(`${invitación}`);
 */
-        const wait = require("util").promisify(setTimeout)
-        let objetos = {
+        
+      /*  let objetos = {
             objeto1: "tic",
             objeto2: "tac"
         };
