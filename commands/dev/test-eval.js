@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const { create } = require('sourcebin')
-const { Client, MessageEmbed, Intents } = require("discord.js");
-const mega = require('megadb'), quick = require('quick.db');
-const ms = require('ms')
+//const { Client, MessageEmbed, Intents } = require("discord.js");
+//const mega = require('megadb'), quick = require('quick.db');
+//const ms = require('ms')
 
 module.exports = {
   name: "eval",
