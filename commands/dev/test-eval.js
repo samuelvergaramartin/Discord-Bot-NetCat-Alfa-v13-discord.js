@@ -9,7 +9,7 @@ module.exports = {
   alias: ["ev"],
   run: async (client, message, args) => {
 
-if(![`911352430963347537`].some(a => a.includes(message.author.id)) == false) return message.reply('<:aviso:925769011822727209>| Oh, esto es algo incomodo solo el equipo del bot puede usar esto');
+        if(message.author.id !== "911352430963347537") return message.channel.send("**:x: | PERMISSION_DENIED :** No tienes permiso para los usar comandos de este bot.\nPersonal autorizado: Sam170703#6466")
 	if(!args[0]) return message.channel.send(':aviso:925769011822727209| Pon algo para evaluar >.<');
 
 	//Eval
