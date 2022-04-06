@@ -1,4 +1,4 @@
-require("dotenv").config();
+rrequire("dotenv").config();
 const discord = require("discord.js");
 //const { create } = require('sourcebin')
 const fs = require('fs');
@@ -17,6 +17,13 @@ let archivos = fs.readdirSync('./commands').filter((f) => f.endsWith('.js'))
 
 for(var archi of archivos) {
     let comando = require("./commands/" + archi)
+    client.comandos.set(comando.name, comando)
+}
+
+let archivos2 = fs.readdirSync('./commands/dev').filter((f) => f.endsWith('.js'))
+
+for(var archi2 of archivos2) {
+    let comando = require("./commands/dev/" + archi2)
     client.comandos.set(comando.name, comando)
 }
 
