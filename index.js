@@ -1,8 +1,8 @@
 require("dotenv").config();
 const discord = require("discord.js");
-const { create } = require('sourcebin')
+//const { create } = require('sourcebin')
 const fs = require('fs');
-const ms = require('ms');
+//const ms = require('ms');
 const botprefix = require('./defaultprefix.json');
 var prefix = botprefix.prefix;
 const db = require('megadb');
@@ -21,11 +21,11 @@ for(var archi of archivos) {
 }
 
 client.once("ready", (bot) => {
-    let estadodnd = "dnd";
-    client.user.setPresence({activities: [{name: '📡Coneccting to NetCat Beta...📡', type: "PLAYING"}], status: `${estadodnd}`});
+    let estadodnd = "idle";
+    client.user.setPresence({activities: [{name: 'Trabajando en NetCat Alfa...', type: "PLAYING"}], status: `${estadodnd}`});
     console.log(`Bot: ${bot.user.username}\nStatus: ${bot.presence.status}`);
 })
-
+//📡Coneccting to NetCat Beta...📡
 
 client.on("messageCreate", async message => {
     if(message.author.bot) return;
