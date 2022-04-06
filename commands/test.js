@@ -11,10 +11,10 @@ module.exports = {
     name: `${ncomando}`,
     run: async (client, message, args, discord) => {
         // repetir con el intervalo de 2 segundos
-        let timerId = setInterval(() => message.channel.send('tick'), 2000);
+       // let timerId = setInterval(() => message.channel.send('tick'), 2000);
 
 // después de 5 segundos parar
-        setTimeout(() => { clearInterval(timerId); message.channel.send('stop'); }, 5000);
+       // setTimeout(() => { clearInterval(timerId); message.channel.send('stop'); }, 5000);
       /*  var a = "2";
         message.channel.send(a);
         var a = "3";
