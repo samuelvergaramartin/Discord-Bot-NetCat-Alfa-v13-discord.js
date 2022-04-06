@@ -1,7 +1,7 @@
 var colors = require('colors');
 const { existsSync } = require('fs');
 const { waitForDebugger } = require('inspector');
-var ncomando = "test";
+var ncomando = "test-event-status-monitor";
 //const db = require('megadb')
 //const estado = new db.crearDB('estadopersonalizado')
 //const estadooff = 2;
@@ -10,6 +10,33 @@ var ncomando = "test";
 module.exports = {
     name: `${ncomando}`,
     run: async (client, message, args, discord) => {
+        message.channel.send("__**MONITOR DE LOS BOTS DEL SERVIDOR**__:")
+        message.channel.send("Loading...").then((msg) => {
+            setInterval(() => {
+                let sv = client.guilds.cache.get("900856291461824562")
+                let x = sv.members.cache.get("923322429286285312")
+                let estado = `${x.presence.status}`;
+                if(estado === "online") {
+                    let estadoreal = "<@923322429286285312> : 🟢 ON 🟢";
+                    msg.edit(estadoreal)
+                }
+                if(estado === "idle") {
+                    let estadoreal = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                    msg.edit(estadoreal)
+                }
+                if(estado === "dnd") {
+                    let estadoreal = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                    msg.edit(estadoreal)
+                }
+                if(estado === "offline") {
+                    let estadoreal = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                    msg.edit(estadoreal)
+                }
+                
+            }, 5000)
+            //Mi ID: 911352430963347537
+            //ID de NetCat Beta: 923322429286285312
+        })
         // repetir con el intervalo de 2 segundos
        // let timerId = setInterval(() => message.channel.send('tick'), 2000);
 
