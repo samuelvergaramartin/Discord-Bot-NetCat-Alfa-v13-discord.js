@@ -1,4 +1,0 @@
-Paquetes que faltan por instalar:
-sourcebin
-ms
-quick.db
