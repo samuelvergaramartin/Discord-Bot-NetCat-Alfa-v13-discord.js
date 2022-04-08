@@ -1,7 +1,8 @@
 var colors = require('colors');
 const { existsSync } = require('fs');
 const { waitForDebugger } = require('inspector');
-var ncomando = "test-event-status-monitor";
+var ncomando = "test";
+//test-event-status-monitor
 //const db = require('megadb')
 //const estado = new db.crearDB('estadopersonalizado')
 //const estadooff = 2;
@@ -18,65 +19,415 @@ module.exports = {
                 let estadobeta = `${netcatbeta.presence.status}`;
                 let netcat = sv.members.cache.get("900470345809674260");
                 let estado = `${netcat.presence.status}`;
-                let netcatalfa = sv.members.cache.get("");
+                let netcatalfa = sv.members.cache.get("952298832773931108");
                 let estadoalfa = `${netcatalfa.presence.status}`;
-                if(estadobeta === "online") {
-                    let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
-                    msg.edit(estadorealbeta)
-                }
-                if(estadobeta === "idle") {
-                    let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
-                    msg.edit(estadorealbeta)
-                }
-                if(estadobeta === "dnd") {
-                    let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
-                    msg.edit(estadorealbeta)
-                }
-                if(estadobeta === "offline") {
-                    let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
-                    msg.edit(estadorealbeta)
-                }
-
-
-                if(estado === "online") {
-                    let estadoreal = "<@900470345809674260> : 🟢 ONLINE 🟢";
-                    msg.edit(estadoreal)
-                }
-                if(estado === "idle") {
-                    let estadoreal = "<@900470345809674260> : 🟡 EN MANTENIMIENTO 🟡";
-                    msg.edit(estadoreal)
-                }
-                if(estado === "dnd") {
-                    let estadoreal = "<@900470345809674260> : 🟠 FUERA DE SERVICIO 🟠";
-                    msg.edit(estadoreal)
-                }
-                if(estado === "offline") {
-                    let estadoreal = "<@900470345809674260> : 🔴 BOT CAÍDO O APAGADO 🔴";
-                    msg.edit(estadoreal)
-                }
-
-
-                if(estadoalfa === "online") {
-                    let estadorealalfa = "<@> : 🟢 ONLINE 🟢";
-                    msg.edit(estadorealalfa)
-                }
-                if(estadoalfa === "idle") {
-                    let estadorealalfa = "<@> : 🟡 EN MANTENIMIENTO 🟡";
-                    msg.edit(estadorealalfa)
-                }
-                if(estadoalfa === "dnd") {
-                    let estadorealalfa = "<@> : 🟠 FUERA DE SERVICIO 🟠";
-                    msg.edit(estadorealalfa)
-                }
-                if(estadoalfa === "offline") {
-                    let estadorealalfa = "<@> : 🔴 BOT CAÍDO O APAGADO 🔴";
-                    msg.edit(estadorealalfa)
-                }
-            }, 5000)
+                
+                    if(estado === "online") {
+                        let estadoreal = "<@900470345809674260> : 🟢 ONLINE 🟢";
+                        if(estadoalfa === "online") {
+                            let estadorealalfa = "<@952298832773931108> : 🟢 ONLINE 🟢";
+                            // msg.edit(estadorealalfa)
+                            if(estadobeta === "online") {
+                             let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                              msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                              }
+                            if(estadobeta === "idle") {
+                                let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                             //  msg.edit(estadorealbeta)
+                             msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                }
+                            if(estadobeta === "dnd") {
+                             let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                 //  msg.edit(estadorealbeta)
+                                 msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                }
+                            if(estadobeta === "offline") {
+                             let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                             } 
+                         }
+                        if(estadoalfa === "idle") {
+                            let estadorealalfa = "<@952298832773931108> : 🟡 EN MANTENIMIENTO 🟡";
+                           // msg.edit(estadorealalfa)
+                           if(estadobeta === "online") {
+                            let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                             }
+                           if(estadobeta === "idle") {
+                               let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "dnd") {
+                            let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "offline") {
+                            let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                               //  msg.edit(estadorealbeta)
+                               msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            } 
+                        }
+                        if(estadoalfa === "dnd") {
+                            let estadorealalfa = "<@952298832773931108> : 🟠 FUERA DE SERVICIO 🟠";
+                            //msg.edit(estadorealalfa)
+                            if(estadobeta === "online") {
+                                let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                 }
+                               if(estadobeta === "idle") {
+                                   let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                   }
+                               if(estadobeta === "dnd") {
+                                let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                    //  msg.edit(estadorealbeta)
+                                    msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                   }
+                               if(estadobeta === "offline") {
+                                let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                                   //  msg.edit(estadorealbeta)
+                                   msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                } 
+                        }
+                        if(estadoalfa === "offline") {
+                            let estadorealalfa = "<@952298832773931108> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                           // msg.edit(estadorealalfa)
+                           if(estadobeta === "online") {
+                            let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                             }
+                           if(estadobeta === "idle") {
+                               let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "dnd") {
+                            let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "offline") {
+                            let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                               //  msg.edit(estadorealbeta)
+                               msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            } 
+                        }
+                       // msg.edit(estadoreal)
+                    }
+                    if(estado === "idle") {
+                        let estadoreal = "<@900470345809674260> : 🟡 EN MANTENIMIENTO 🟡";
+                        //msg.edit(estadoreal)
+                        if(estadoalfa === "online") {
+                            let estadorealalfa = "<@952298832773931108> : 🟢 ONLINE 🟢";
+                            // msg.edit(estadorealalfa)
+                            if(estadobeta === "online") {
+                             let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                              msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                              }
+                            if(estadobeta === "idle") {
+                                let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                             //  msg.edit(estadorealbeta)
+                             msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                }
+                            if(estadobeta === "dnd") {
+                             let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                 //  msg.edit(estadorealbeta)
+                                 msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                }
+                            if(estadobeta === "offline") {
+                             let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                             } 
+                         }
+                        if(estadoalfa === "idle") {
+                            let estadorealalfa = "<@952298832773931108> : 🟡 EN MANTENIMIENTO 🟡";
+                           // msg.edit(estadorealalfa)
+                           if(estadobeta === "online") {
+                            let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                             }
+                           if(estadobeta === "idle") {
+                               let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "dnd") {
+                            let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "offline") {
+                            let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                               //  msg.edit(estadorealbeta)
+                               msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            } 
+                        }
+                        if(estadoalfa === "dnd") {
+                            let estadorealalfa = "<@952298832773931108> : 🟠 FUERA DE SERVICIO 🟠";
+                            //msg.edit(estadorealalfa)
+                            if(estadobeta === "online") {
+                                let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                 }
+                               if(estadobeta === "idle") {
+                                   let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                   }
+                               if(estadobeta === "dnd") {
+                                let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                    //  msg.edit(estadorealbeta)
+                                    msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                   }
+                               if(estadobeta === "offline") {
+                                let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                                   //  msg.edit(estadorealbeta)
+                                   msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                                } 
+                        }
+                        if(estadoalfa === "offline") {
+                            let estadorealalfa = "<@952298832773931108> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                           // msg.edit(estadorealalfa)
+                           if(estadobeta === "online") {
+                            let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                             }
+                           if(estadobeta === "idle") {
+                               let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "dnd") {
+                            let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "offline") {
+                            let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                               //  msg.edit(estadorealbeta)
+                               msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            } 
+                        }
+                    }
+                    if(estado === "dnd") {
+                        let estadoreal = "<@900470345809674260> : 🟠 FUERA DE SERVICIO 🟠";
+                       // msg.edit(estadoreal)
+                       if(estadoalfa === "online") {
+                        let estadorealalfa = "<@952298832773931108> : 🟢 ONLINE 🟢";
+                        // msg.edit(estadorealalfa)
+                        if(estadobeta === "online") {
+                         let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                          msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                          }
+                        if(estadobeta === "idle") {
+                            let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                         //  msg.edit(estadorealbeta)
+                         msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            }
+                        if(estadobeta === "dnd") {
+                         let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                             //  msg.edit(estadorealbeta)
+                             msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            }
+                        if(estadobeta === "offline") {
+                         let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                         } 
+                     }
+                    if(estadoalfa === "idle") {
+                        let estadorealalfa = "<@952298832773931108> : 🟡 EN MANTENIMIENTO 🟡";
+                       // msg.edit(estadorealalfa)
+                       if(estadobeta === "online") {
+                        let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                        //  msg.edit(estadorealbeta)
+                        msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                         }
+                       if(estadobeta === "idle") {
+                           let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                        //  msg.edit(estadorealbeta)
+                        msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                           }
+                       if(estadobeta === "dnd") {
+                        let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                           }
+                       if(estadobeta === "offline") {
+                        let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                           //  msg.edit(estadorealbeta)
+                           msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                        } 
+                    }
+                    if(estadoalfa === "dnd") {
+                        let estadorealalfa = "<@952298832773931108> : 🟠 FUERA DE SERVICIO 🟠";
+                        //msg.edit(estadorealalfa)
+                        if(estadobeta === "online") {
+                            let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                             }
+                           if(estadobeta === "idle") {
+                               let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "dnd") {
+                            let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "offline") {
+                            let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                               //  msg.edit(estadorealbeta)
+                               msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            } 
+                    }
+                    if(estadoalfa === "offline") {
+                        let estadorealalfa = "<@952298832773931108> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                       // msg.edit(estadorealalfa)
+                       if(estadobeta === "online") {
+                        let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                        //  msg.edit(estadorealbeta)
+                        msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                         }
+                       if(estadobeta === "idle") {
+                           let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                        //  msg.edit(estadorealbeta)
+                        msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                           }
+                       if(estadobeta === "dnd") {
+                        let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                           }
+                       if(estadobeta === "offline") {
+                        let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                           //  msg.edit(estadorealbeta)
+                           msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                        } 
+                    }
+                    }
+                    if(estado === "offline") {
+                        let estadoreal = "<@900470345809674260> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                       // msg.edit(estadoreal)
+                       if(estadoalfa === "online") {
+                        let estadorealalfa = "<@952298832773931108> : 🟢 ONLINE 🟢";
+                        // msg.edit(estadorealalfa)
+                        if(estadobeta === "online") {
+                         let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                          msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                          }
+                        if(estadobeta === "idle") {
+                            let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                         //  msg.edit(estadorealbeta)
+                         msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            }
+                        if(estadobeta === "dnd") {
+                         let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                             //  msg.edit(estadorealbeta)
+                             msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            }
+                        if(estadobeta === "offline") {
+                         let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                         } 
+                     }
+                    if(estadoalfa === "idle") {
+                        let estadorealalfa = "<@952298832773931108> : 🟡 EN MANTENIMIENTO 🟡";
+                       // msg.edit(estadorealalfa)
+                       if(estadobeta === "online") {
+                        let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                        //  msg.edit(estadorealbeta)
+                        msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                         }
+                       if(estadobeta === "idle") {
+                           let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                        //  msg.edit(estadorealbeta)
+                        msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                           }
+                       if(estadobeta === "dnd") {
+                        let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                           }
+                       if(estadobeta === "offline") {
+                        let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                           //  msg.edit(estadorealbeta)
+                           msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                        } 
+                    }
+                    if(estadoalfa === "dnd") {
+                        let estadorealalfa = "<@952298832773931108> : 🟠 FUERA DE SERVICIO 🟠";
+                        //msg.edit(estadorealalfa)
+                        if(estadobeta === "online") {
+                            let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                             }
+                           if(estadobeta === "idle") {
+                               let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "dnd") {
+                            let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                                //  msg.edit(estadorealbeta)
+                                msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                               }
+                           if(estadobeta === "offline") {
+                            let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                               //  msg.edit(estadorealbeta)
+                               msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                            } 
+                    }
+                    if(estadoalfa === "offline") {
+                        let estadorealalfa = "<@952298832773931108> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                       // msg.edit(estadorealalfa)
+                       if(estadobeta === "online") {
+                        let estadorealbeta = "<@923322429286285312> : 🟢 ONLINE 🟢";
+                        //  msg.edit(estadorealbeta)
+                        msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                         }
+                       if(estadobeta === "idle") {
+                           let estadorealbeta = "<@923322429286285312> : 🟡 EN MANTENIMIENTO 🟡";
+                        //  msg.edit(estadorealbeta)
+                        msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                           }
+                       if(estadobeta === "dnd") {
+                        let estadorealbeta = "<@923322429286285312> : 🟠 FUERA DE SERVICIO 🟠";
+                            //  msg.edit(estadorealbeta)
+                            msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                           }
+                       if(estadobeta === "offline") {
+                        let estadorealbeta = "<@923322429286285312> : 🔴 BOT CAÍDO O APAGADO 🔴";
+                           //  msg.edit(estadorealbeta)
+                           msg.edit(`${estadoreal}\n${estadorealalfa}\n${estadorealbeta}`)
+                        } 
+                    }
+                    }
+                
+                
+                   
+               
+                
+            }, 40000)
             //Mi ID: 911352430963347537
             //ID de NetCat Beta: 923322429286285312
             //ID de NetCat: 900470345809674260
-            //ID de NetCat Alfa: (Ponerlo en casa!)
+            //ID de NetCat Alfa: 952298832773931108
         })
         // repetir con el intervalo de 2 segundos
        // let timerId = setInterval(() => message.channel.send('tick'), 2000);
